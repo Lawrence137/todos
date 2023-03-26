@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import NewTask from './components/NewTask';
+import TaskList from './components/TaskList';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
       <Navbar />
       <Routes>
+      <Route path="/tasks" element={<TaskList/>} />
         <Route path="/" element={<Signup/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/tasks/new" element={<NewTask/>} />

@@ -24,7 +24,7 @@ function NewTask() {
         }).then((res)=>{
             if(res.ok){
                 console.log(res)
-                redirect('/list')
+                redirect('/tasks')
                 return res.json()
             }else{
                 console.log(res)
