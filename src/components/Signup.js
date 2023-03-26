@@ -36,7 +36,10 @@ function Signup() {
         })
     }
     return (
+
+        
         <form onSubmit={handleSubmit}>
+            <h2>Welcome to Task Train</h2>
 <div className="container col-md-4">
   <label for="exampleInputPassword1" class="form-label">username</label>
     <input type="text" name="username" class="form-control"  value={username} onChange={e=>setUsername(e.target.value)}/>

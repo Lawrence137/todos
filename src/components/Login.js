@@ -25,7 +25,7 @@ function Login() {
         }).then((res)=>{
             if(res.ok){
                 console.log(res)
-                redirect("/list")
+                redirect("/tasks")
 
                 return res.json()
             }else{
