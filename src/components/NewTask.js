@@ -33,7 +33,7 @@ function NewTask() {
     }
     return  (
         <div className="col-md-6 container">
-<h1>Add New Task</h1>
+<h4>Add New Task</h4>
 <form onSubmit={handleSubmit}>
   <label htmlFor="title">Title:</label>
   <input type="text" name="title" className="form-control" id="" placeholder='Enter title' value={title} onChange={e => setTitle(e.target.value)} />
