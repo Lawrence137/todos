@@ -11,7 +11,7 @@ function Navbar() {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <NavLink to='/list' class="nav-link" >Tasks</NavLink>
+          <NavLink to='/tasks' class="nav-link" >Tasks</NavLink>
         </li>
         <li class="nav-item">
           <NavLink to='/tasks/new' class="nav-link" >New Task</NavLink>

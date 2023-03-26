@@ -37,21 +37,19 @@ function Signup() {
     }
     return (
         <form onSubmit={handleSubmit}>
-           
-  <div class="col-md-6 mb-3 ">
-  
+<div className="container col-md-4">
   <label for="exampleInputPassword1" class="form-label">username</label>
     <input type="text" name="username" class="form-control"  value={username} onChange={e=>setUsername(e.target.value)}/>
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" name="email" class="form-control"  value={email} onChange={e=>setEmail(e.target.value)}/>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="col-md-6 mb-3">
+ 
+ 
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" name="password" class="form-control" value={password} onChange={e=>setPassword(e.target.value)}/>
-  </div>
-  <button type="submit" class="col-md-6 btn btn-primary" >Submit</button>
 
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</div>
 </form>
     )
 
