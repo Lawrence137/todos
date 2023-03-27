@@ -27,7 +27,7 @@ function Signup() {
         }).then((res)=>{
             if(res.ok){
                 console.log()
-                redirect("/login")
+                redirect("/tasks/new")
 
                 return res.json()
             }else{
@@ -41,11 +41,12 @@ function Signup() {
         <form onSubmit={handleSubmit}>
             <h2>Welcome to Task Train</h2>
 <div className="container col-md-4">
-  <label for="exampleInputPassword1" class="form-label">username</label>
+    <h2>Sign Up Here</h2>
+  <label for="exampleInputPassword1" class="form-label">Username</label>
     <input type="text" name="username" class="form-control"  value={username} onChange={e=>setUsername(e.target.value)}/>
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" name="email" class="form-control"  value={email} onChange={e=>setEmail(e.target.value)}/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div id="emailHelp" class="form-text"></div>
  
  
     <label for="exampleInputPassword1" class="form-label">Password</label>

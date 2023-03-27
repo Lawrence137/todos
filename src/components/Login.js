@@ -36,8 +36,8 @@ function Login() {
     return (
         <form onSubmit={handleSubmit}>
 <div className="container col-md-4">            
-  
-    <label for="exampleInputEmail1" class="form-label">username</label>
+  <h2>Login</h2>
+    <label for="exampleInputEmail1" class="form-label">Username</label>
     <input type="username" name="username" class="form-control"  value={username} onChange={e=>setUsername(e.target.value)}/>
     <div id="emailHelp" class="form-text"></div>
  
