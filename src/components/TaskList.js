@@ -61,6 +61,25 @@ function TaskList() {
                   console.log(res)
                 })
               }
+
+              function handleLogout() {
+                fetch( {
+                  method: 'DELETE',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  }
+                }).then((response) => {
+                  if (response.ok) {
+                    redirect("/login")
+                  } else {
+                    console.log('Logout failed.');
+                  }
+                }, function(error) {
+                  console.log(error);
+                });
+              }
+              
+              
           
 
     const taskList = task.map(task=>{
@@ -88,6 +107,8 @@ function TaskList() {
     
 
     <button onClick={()=>handleDelete(task.id)}>Delete</button>
+    <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
+
 
     {/* <a href="#" className="card-link">Card link</a>
     <a href="#" className="card-link">Another link</a> */}
