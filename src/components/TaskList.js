@@ -13,7 +13,7 @@ function TaskList() {
     console.log(task)
     
         useEffect(() => {
-            fetch()
+            fetch(`https://task-manager-tcxk.onrender.com/tasks`)
               .then(res => res.json()
                 .then(data => {
                     console.log(data)
@@ -23,7 +23,7 @@ function TaskList() {
           }, [])
 
           function handleDelete(id) {
-            fetch( {
+            fetch(`https://task-manager-tcxk.onrender.com/tasks/delete/${id}`, {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ function TaskList() {
           }
 
           function handleUpdate(id, title, description, status, priority) {
-                fetch( {
+                fetch(`https://task-manager-tcxk.onrender.com/tasks/update/${id}`,{
                   method: 'PATCH',
                   headers: {
                     'Content-Type': 'application/json'
@@ -62,22 +62,7 @@ function TaskList() {
                 })
               }
 
-              function handleLogout() {
-                fetch( {
-                  method: 'DELETE',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  }
-                }).then((response) => {
-                  if (response.ok) {
-                    redirect("/login")
-                  } else {
-                    console.log('Logout failed.');
-                  }
-                }, function(error) {
-                  console.log(error);
-                });
-              }
+
               
               
           
@@ -92,7 +77,7 @@ function TaskList() {
   <div className="card-body">
   {editId === task.id?(<input value={title} onChange={(e)=>setTitle(e.target.value)}/>)
   :(<h5 className="card-title">{task.title}</h5>)}
-    <h6 className="card-subtitle mb-2 text-muted">My Task</h6>
+    
     
     {editId === task.id?(<input value={description} onChange={(e)=>setDescription(e.target.value)}/>)
     :(<p className="card-text">{task.description}</p>)}
@@ -107,7 +92,7 @@ function TaskList() {
     
 
     <button onClick={()=>handleDelete(task.id)}>Delete</button>
-    <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
+    
 
 
     {/* <a href="#" className="card-link">Card link</a>

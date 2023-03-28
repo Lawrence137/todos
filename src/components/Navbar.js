@@ -1,6 +1,26 @@
 import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 function Navbar() {
+  const redirect = useNavigate()
+
+  function handleLogout() {
+    fetch( {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => {
+      if (response.ok) {
+        redirect("/login")
+      } else {
+        console.log('Logout failed.');
+      }
+    }, function(error) {
+      console.log(error);
+    });
+  }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -40,7 +60,7 @@ function Navbar() {
           </ul>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <button className="btn btn-primary">Logout</button>
+            <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>

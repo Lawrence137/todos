@@ -11,7 +11,7 @@ function NewTask() {
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch({
+        fetch(`https://task-manager-tcxk.onrender.com/tasks/create`,{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
